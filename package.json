@@ -1,0 +1,32 @@
+{
+  "name": "CanCopy",
+  "description": "A web extension that allow you to copy any content from web site",
+  "license": "MIT",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@adara-cs/ui-kit-web": "^2.13.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2",
+    "@wxt-dev/module-react": "^1.1.3",
+    "typescript": "^5.8.3",
+    "wxt": "^0.20.0",
+    "postcss-import": "^16.1.0",
+    "postcss-url": "^10.1.3"
+  }
+}
