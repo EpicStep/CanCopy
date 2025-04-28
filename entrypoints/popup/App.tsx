@@ -4,20 +4,25 @@ import wxtLogo from '/wxt.svg';
 import {Button, Spinner} from '@adara-cs/ui-kit-web';
 import './App.css';
 import { i18n } from '#i18n';
+import { storage } from '#imports';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div className='light'>
+      <>
+        <div className='light'>
         <a href="https://wxt.dev" target="_blank">
           <img src={wxtLogo} className="logo" alt="WXT logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-          <Button>{i18n.t('helloWorld')}</Button>
+          <Button onClick={async () => {
+              await storage.setItem('local:preference', 123)
+              console.log(await storage.getItem('local:preference'))
+              return
+          }}>{i18n.t('helloWorld')}</Button>
           <Spinner></Spinner>
       </div>
       <h1>WXT + React</h1>
@@ -32,7 +37,7 @@ function App() {
       <p className="read-the-docs">
         Click on the WXT and React logos to learn more
       </p>
-    </>
+      </>
   );
 }
 
