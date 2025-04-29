@@ -2,9 +2,13 @@ import {storage} from "#imports";
 
 export default defineContentScript({
   matches: ['*://*/*'],
-  main() {
-    console.log('Hello content.');
-    console.log(storage.getItem('local:preference'))
+  async main() {
+    let settings = await storage.getItem('local:settings')
+    if (settings) {
+
+    }
+
+    console.log(settings);
     var div = document.createElement('div');
     var label = document.createElement('span');
     label.textContent = "Hello, world";

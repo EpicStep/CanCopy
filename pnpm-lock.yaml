@@ -9,11 +9,17 @@ importers:
   .:
     dependencies:
       '@adara-cs/ui-kit-web':
-        specifier: ^2.13.0
-        version: 2.13.0(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^2.14.1
+        version: 2.14.1(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@adara-cs/utils':
+        specifier: ^2.14.1
+        version: 2.14.1
       '@wxt-dev/i18n':
         specifier: ^0.2.3
         version: 0.2.3(wxt@0.20.5(@types/node@22.15.2)(jiti@2.4.2)(rollup@4.40.0))
+      normalize.css:
+        specifier: ^8.0.1
+        version: 8.0.1
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -42,26 +48,26 @@ packages:
   '@1natsu/wait-element@4.1.2':
     resolution: {integrity: sha512-qWxSJD+Q5b8bKOvESFifvfZ92DuMsY+03SBNjTO34ipJLP6mZ9yK4bQz/vlh48aEQXoJfaZBqUwKL5BdI5iiWw==}
 
-  '@adara-cs/hooks@2.13.0':
-    resolution: {integrity: sha512-tPBtGMrI1DQpBXrIHZoFbkkIC5eWXO/33d92PFpC/jo2XT+yaqNzO5uH8C/nkBukwcShkGA1iiDoEsm1VelBZg==}
+  '@adara-cs/hooks@2.14.1':
+    resolution: {integrity: sha512-IMLjnwRkNo3IhlRZqi9m1a1ZTx+GLK4hrovNdzfUx9s/o9Z5aNKwO4tPrtZJs+NT8n1NG40N+gLUhCcs492lTA==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@adara-cs/icons@2.13.0':
-    resolution: {integrity: sha512-z8KtaQ5yAxveVbeKD6j4jgGSDKnKicAdQ1S6LZV4HboEMaBF4BxFQvIQVzTGFYQvCb+F7yt4K+EQQULXY9aPfA==}
+  '@adara-cs/icons@2.14.1':
+    resolution: {integrity: sha512-K6Fh1g0AbScO0vpdvg+oYxCEmbSMh2S526bNqGxFOtb+jHnemmmhqEFThyMKOimeXcK/9hnOa47lGEiJWiPe3A==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@adara-cs/ui-kit-web@2.13.0':
-    resolution: {integrity: sha512-c1owXAAurumZ4c9KpR6Srbz7RKFVD8vkH3UZNXgyZKmP99TVOfIvYF898W3Th1jlHSTQBJ7bZ3LxtLrKYEce8g==}
+  '@adara-cs/ui-kit-web@2.14.1':
+    resolution: {integrity: sha512-YAz12f0bnRVVKdlzSQVPyxwYDV180MGvQwquGENSSdcmrUFn6MjGvMKMrDrYV/akJS7b5bFxd0KY/hAQ+OXV+w==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@adara-cs/utils@2.13.0':
-    resolution: {integrity: sha512-DRNfnxT6NsoOnl/w6cbuF8uaEAWXJT0o+YYXzKSQa7jVp4iGAPRJkdwnh5XSM4FmExTacblfOnb1Ajh0MbT8oA==}
+  '@adara-cs/utils@2.14.1':
+    resolution: {integrity: sha512-H6GdtMG+OB/ACVc4jUHUqmlhmJSM0A6qCWQ6dnAp8oipanHmpP+TPN6WJcMD4FeHyTQrSu04YDbupA+qNqeS1Q==}
 
   '@aklinker1/rollup-plugin-visualizer@5.12.0':
     resolution: {integrity: sha512-X24LvEGw6UFmy0lpGJDmXsMyBD58XmX1bbwsaMLhNoM+UMQfQ3b2RtC+nz4b/NoRK5r6QJSKJHBNVeUdwqybaQ==}
@@ -1623,6 +1629,9 @@ packages:
     resolution: {integrity: sha512-IO9QvjUMWxPQQhs60oOu10CRkWCiZzSUkzbXGGV9pviYl1fXYcvkzQ5jV9z8Y6un8ARoVRl4EtC6v6jNqbaJ/w==}
     engines: {node: '>=14.16'}
 
+  normalize.css@8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+
   npm-run-path@4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
@@ -2360,21 +2369,21 @@ snapshots:
       defu: 6.1.4
       many-keys-map: 2.0.1
 
-  '@adara-cs/hooks@2.13.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@adara-cs/hooks@2.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@adara-cs/icons@2.13.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@adara-cs/icons@2.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@adara-cs/ui-kit-web@2.13.0(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@adara-cs/ui-kit-web@2.14.1(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@adara-cs/hooks': 2.13.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@adara-cs/icons': 2.13.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@adara-cs/utils': 2.13.0
+      '@adara-cs/hooks': 2.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@adara-cs/icons': 2.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@adara-cs/utils': 2.14.1
       '@floating-ui/react': 0.27.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@maskito/core': 3.7.2
       '@maskito/kit': 3.7.2(@maskito/core@3.7.2)
@@ -2387,7 +2396,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@adara-cs/utils@2.13.0': {}
+  '@adara-cs/utils@2.14.1': {}
 
   '@aklinker1/rollup-plugin-visualizer@5.12.0(rollup@4.40.0)':
     dependencies:
@@ -3853,6 +3862,8 @@ snapshots:
   normalize-path@3.0.0: {}
 
   normalize-url@8.0.1: {}
+
+  normalize.css@8.0.1: {}
 
   npm-run-path@4.0.1:
     dependencies:

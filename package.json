@@ -16,8 +16,10 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "@adara-cs/ui-kit-web": "^2.13.0",
+    "@adara-cs/ui-kit-web": "^2.14.1",
+    "@adara-cs/utils": "^2.14.1",
     "@wxt-dev/i18n": "^0.2.3",
+    "normalize.css": "^8.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

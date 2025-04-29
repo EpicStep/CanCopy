@@ -1,44 +1,59 @@
-import { useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import wxtLogo from '/wxt.svg';
-import {Button, Spinner} from '@adara-cs/ui-kit-web';
+import {
+    Card,
+    TextField,
+    Text,
+    IconButton,
+    Heading,
+    Label,
+} from '@adara-cs/ui-kit-web';
 import './App.css';
 import { i18n } from '#i18n';
-import { storage } from '#imports';
+import {csx} from "@adara-cs/utils";
+import {useAppTheme} from "@/entrypoints/popup/hooks/useAppTheme.ts";
+import {useURLStore} from "@/entrypoints/popup/hooks/useURLStore.ts";
+import {Header} from "@/entrypoints/popup/components/Header/Header.tsx";
+
 
 function App() {
-  const [count, setCount] = useState(0);
+    const [theme] = useAppTheme()
+    const [urlInputState, setURLInput] = useState('')
+    const [storedURLs, addURLToStore] = useURLStore()
 
-  return (
-      <>
-        <div className='light'>
-        <a href="https://wxt.dev" target="_blank">
-          <img src={wxtLogo} className="logo" alt="WXT logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-          <Button onClick={async () => {
-              await storage.setItem('local:preference', 123)
-              console.log(await storage.getItem('local:preference'))
-              return
-          }}>{i18n.t('helloWorld')}</Button>
-          <Spinner></Spinner>
-      </div>
-      <h1>WXT + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the WXT and React logos to learn more
-      </p>
-      </>
-  );
+    const urlList = storedURLs.map(url => {
+        return (
+            <Card className='side-card' size='small'>
+                <Text className='side-card-text'>{url}</Text>
+                <IconButton name='minus' size='small' />
+            </Card>
+        )
+    })
+
+    return (
+        <main className={csx(theme, 'main')}>
+            <Header />
+            <Label htmlFor='side-add'>{i18n.t('addSite')}:</Label>
+            <div className='side-add' id='side-add'>
+                <TextField
+                    value={urlInputState}
+                    onChange={(e) => {
+                        setURLInput(e.target.value)
+                    }}
+                />
+                <IconButton
+                    name='plus'
+                    size='small'
+                    onClick={() => {
+                        addURLToStore(urlInputState)
+                        setURLInput('')
+                    }}
+                />
+            </div>
+            <Heading size='3'>{i18n.t('enabledSites')}:</Heading>
+            <div>
+                {urlList}
+            </div>
+        </main>
+    );
 }
 
 export default App;
