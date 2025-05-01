@@ -39,21 +39,3 @@
     top: -50%;
     transform: translate(-50%, -50%);
 }
-
-.theme-icon {
-    color: var(--text-color);
-}
-
-.side-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.side-card-text {
-    max-width: 200px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}

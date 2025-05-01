@@ -1,4 +1,3 @@
-import './App.css';
 import { useAppTheme } from "@/entrypoints/popup/hooks/useAppTheme.ts";
 import { ThemeProvider } from '@/entrypoints/popup/providers';
 import { Main } from '@/entrypoints/popup/components/Main';

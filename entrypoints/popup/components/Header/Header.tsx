@@ -4,7 +4,7 @@ import {
     SegmentedControlItem,
     Heading,
 } from '@adara-cs/ui-kit-web';
-import styles from './Header.module.css'
+import styles from './style.module.css'
 import { useTheme } from '@/entrypoints/popup/hooks';
 
 export const Header = () => {

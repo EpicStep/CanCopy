@@ -45,10 +45,10 @@ export const Main: FC = () => {
       </form>
       <div className={style.alternativeSeparator}>
         <Separator />
-        <Text className={style.alternativeText}>Или</Text>
+        <Text className={style.alternativeText}>{i18n.t('or')}</Text>
       </div>
       <Button variant='secondary'>
-        Добавить текущий
+        {i18n.t('addCurrentSite')}
       </Button>
       <Separator />
       <section>
