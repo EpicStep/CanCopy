@@ -1,0 +1,59 @@
+.main {
+    min-width: 300px;
+    background-color: var(--background-color);
+    padding: var(--spacing-12);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+}
+
+.label {
+    margin-bottom: var(--spacing-4);
+}
+
+.urlFieldset {
+    border: none;
+    padding: 0;
+}
+
+.urlFieldWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-8);
+    padding-right: calc(var(--spacing-8) + 1px);
+}
+
+.alternativeSeparator {
+    position: relative;
+    margin-block: var(--spacing-6);
+}
+
+.alternativeText {
+    background-color: var(--background-color);
+    padding: var(--spacing-4);
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.theme-icon {
+    color: var(--text-color);
+}
+
+.side-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-card-text {
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -1,34 +1,39 @@
-import {storage} from "#imports";
-import {useLayoutEffect} from "react";
+import { storage } from "#imports";
+import { useLayoutEffect, useEffect } from "react";
+import { isValidURL } from '@/entrypoints/popup/utils';
 
 export const useURLStore = () => {
-    const [state, setState] = useState<string[]>([])
+    const [urls, setURLs] = useState<string[]>([])
+    const initialized = useRef(false)
 
     const storageKey = 'local:processing-urls'
 
     useLayoutEffect(() => {
-        storage.getItem(storageKey).then((val: string[]) => {
-            if (!val) {
-                return
-            }
-
-            setState(val)
+        storage.getItem<string[]>(storageKey).then((value) => {
+            initialized.current = true;
+            if (!value) return
+            setURLs(value)
         })
     }, [])
 
-    // TODO: where to validate?
     const add = (url: string) => {
-        setState((state) => {
-            let nextState = [
-                ...state,
-                url
-            ]
+        if (!isValidURL(url)) throw new Error('Invalid URL')
+        if (urls.includes(url)) return
 
-            storage.setItem(storageKey, nextState)
-
-            return nextState
-        })
+        setURLs((state) => [...state, url])
     }
 
-    return [state, add]
+    const remove = (url: string) => {
+        setURLs((state) => state.filter(u => u !== url))
+    }
+
+    useEffect(() => {
+        if (urls && initialized.current) storage.setItem(storageKey, urls)
+    }, [urls])
+
+    return {
+        urls,
+        add,
+        remove,
+    }
 }

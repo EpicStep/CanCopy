@@ -5,14 +5,14 @@ import {
     Heading,
 } from '@adara-cs/ui-kit-web';
 import styles from './Header.module.css'
-import {useAppTheme} from "@/entrypoints/popup/hooks/useAppTheme.ts";
+import { useTheme } from '@/entrypoints/popup/hooks';
 
 export const Header = () => {
-    const [theme, toggleTheme] = useAppTheme()
+    const { theme, toggle: toggleTheme } = useTheme()
 
     return (
         <header className={styles.header}>
-            <Heading size='3'>CanCopy</Heading>
+            <Heading fontWeight={500} as='h1' size={5}>CanCopy</Heading>
             <SegmentedControl
                 onChange={toggleTheme}
                 variant="secondary"
