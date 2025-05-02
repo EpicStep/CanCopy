@@ -1,3 +1,7 @@
 {
-  "helloWorld": "Привет мир!"
+  "enabledSites": "Активные сайты",
+  "addSite": "Добавить сайт",
+  "addCurrentSite": "Добавить текущий сайт",
+  "or": "Или",
+  "listIsEmpty": "Список пуст"
 }

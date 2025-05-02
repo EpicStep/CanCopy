@@ -1,3 +1,7 @@
 {
-  "helloWorld": "Hello world!"
+  "enabledSites": "Enabled Sites",
+  "addSite": "Add Site",
+  "addCurrentSite": "Add Current Site",
+  "or": "Or",
+  "listIsEmpty": "List is empty"
 }
