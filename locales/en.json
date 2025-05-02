@@ -2,5 +2,6 @@
   "enabledSites": "Enabled Sites",
   "addSite": "Add Site",
   "addCurrentSite": "Add Current Site",
-  "or": "Or"
+  "or": "Or",
+  "listIsEmpty": "List is empty"
 }

@@ -47,17 +47,29 @@ export const Main: FC = () => {
         <Separator />
         <Text className={style.alternativeText}>{i18n.t('or')}</Text>
       </div>
-      <Button variant='secondary'>
+      <Button
+        variant='secondary'
+        onClick={() => {
+          browser.tabs.query({active: true}).then((tabs) => {
+            if (tabs.length < 1) return
+           addURLToStore(URL.parse(tabs[0].url)?.origin)
+          })
+        }}
+      >
         {i18n.t('addCurrentSite')}
       </Button>
-      <Separator />
+      <Separator/>
       <section>
         <Heading as='h3' size={3}>{i18n.t('enabledSites')}:</Heading>
-        <URLList>
-          {storedURLs.map((url) => (
-            <URLListItem onRemove={() => removeURLFromStore(url)} key={url}>{url}</URLListItem>
-          ))}
-        </URLList>
+        {storedURLs.length > 0 ? (
+          <URLList>
+            {storedURLs.map((url) => (
+              <URLListItem onRemove={() => removeURLFromStore(url)} key={url}>{url}</URLListItem>
+            ))}
+          </URLList>
+        ) : (
+          <Heading as='h3' size={3} fontWeight={400} className={style.emptyURLListText}>{i18n.t('listIsEmpty')}</Heading>
+        )}
       </section>
     </main>
   )

@@ -2,5 +2,6 @@
   "enabledSites": "Активные сайты",
   "addSite": "Добавить сайт",
   "addCurrentSite": "Добавить текущий сайт",
-  "or": "Или"
+  "or": "Или",
+  "listIsEmpty": "Список пуст"
 }
