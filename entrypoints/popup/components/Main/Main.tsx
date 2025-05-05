@@ -7,6 +7,7 @@ import { useTheme, useURLStore } from '@/entrypoints/popup/hooks';
 import { URLList } from '@/entrypoints/popup/components/URLList';
 import { URLListItem } from '@/entrypoints/popup/components/URLListItem';
 import style from './style.module.css'
+import {MinusIcon, PlusIcon} from "@adara-cs/icons";
 
 export const Main: FC = () => {
   const { theme } = useTheme()
@@ -36,11 +37,7 @@ export const Main: FC = () => {
               setURLInput(e.target.value)
             }}
           />
-          <IconButton
-            type='submit'
-            name='plus'
-            size='small'
-          />
+          <IconButton type='submit' size='small'><PlusIcon/></IconButton>
         </div>
       </form>
       <div className={style.alternativeSeparator}>
@@ -52,7 +49,7 @@ export const Main: FC = () => {
         onClick={() => {
           browser.tabs.query({active: true}).then((tabs) => {
             if (tabs.length < 1) return
-           addURLToStore(URL.parse(tabs[0].url)?.origin)
+           addURLToStore(tabs[0].url)
           })
         }}
       >
@@ -68,7 +65,7 @@ export const Main: FC = () => {
             ))}
           </URLList>
         ) : (
-          <Heading as='h3' size={3} fontWeight={400} className={style.emptyURLListText}>{i18n.t('listIsEmpty')}</Heading>
+          <Text asChild className={style.emptyURLListText}><p>{i18n.t('listIsEmpty')}</p></Text>
         )}
       </section>
     </main>

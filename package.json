@@ -1,9 +1,9 @@
 {
   "name": "CanCopy",
-  "description": "A web extension that allow you to copy any content from web site",
+  "description": "A web extension that allow you to copy any content from website",
   "license": "MIT",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -13,11 +13,14 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
-    "postinstall": "wxt prepare"
+    "postinstall": "wxt prepare",
+    "test": "vitest run",
+    "test:watch": "vitest --watch"
   },
   "dependencies": {
-    "@adara-cs/ui-kit-web": "^2.14.4",
-    "@adara-cs/utils": "^2.14.4",
+    "@adara-cs/icons": "^3.0.2",
+    "@adara-cs/ui-kit-web": "^3.0.2",
+    "@adara-cs/utils": "^3.0.1",
     "@wxt-dev/i18n": "^0.2.3",
     "normalize.css": "^8.0.1",
     "react": "^19.1.0",
@@ -26,8 +29,11 @@
   "devDependencies": {
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.2",
+    "@wxt-dev/auto-icons": "^1.0.2",
     "@wxt-dev/module-react": "^1.1.3",
+    "happy-dom": "^17.4.6",
     "typescript": "^5.8.3",
+    "vitest": "^3.1.2",
     "wxt": "^0.20.0"
   }
 }

@@ -1,15 +1,13 @@
-import { storage } from "#imports";
 import { useLayoutEffect, useEffect, useState, useCallback } from "react";
-
-type Theme = 'dark' | 'light';
+import { Theme, ThemeStorage } from "@/storage";
 
 export const useAppTheme = () => {
     const [theme, setTheme] = useState<Theme>(window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ? 'dark' : 'light')
-
-    const storageKey = 'local:preferred-theme'
+    const initialized = useRef(false)
 
     useLayoutEffect(() => {
-        storage.getItem<Theme>(storageKey).then((value) => {
+        ThemeStorage.getValue().then((value) => {
+            initialized.current = true;
             if (!value) return
             setTheme(value)
         })
@@ -20,7 +18,7 @@ export const useAppTheme = () => {
     }, [])
 
     useEffect(() => {
-        if (theme) storage.setItem<Theme>(storageKey, theme)
+        if (theme && initialized.current) ThemeStorage.setValue(theme)
     }, [theme]);
 
     return [theme, toggle] as const

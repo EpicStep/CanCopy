@@ -1,18 +1,26 @@
-import {storage} from "#imports";
+import { URLStorage } from "@/storage";
 
 export default defineContentScript({
   matches: ['*://*/*'],
   async main() {
-    let settings = await storage.getItem('local:settings')
-    if (settings) {
+    const currentLocation = window.location.origin;
 
-    }
+    const processingURLs = await URLStorage.getValue()
+    if (!processingURLs || !processingURLs.includes(currentLocation)) return
 
-    console.log(settings);
-    var div = document.createElement('div');
-    var label = document.createElement('span');
-    label.textContent = "Hello, world";
-    div.appendChild(label);
-    document.body.appendChild(div);
+    removeCopyLocks(document)
   },
 });
+
+const removeCopyLocks = (document: Document) => {
+  document.querySelectorAll('*').forEach(el => {
+    if (el.style.userSelect != '') el.style.userSelect = 'text';
+    if (el.style.webkitUserSelect != '') el.style.webkitUserSelect = 'text';
+    if (el.style.MozUserSelect != '') el.style.MozUserSelect = 'text';
+    if (el.style.msUserSelect != '') el.style.msUserSelect = 'text';
+
+    el.removeAttribute('oncopy')
+    el.removeAttribute('oncut')
+    el.removeAttribute('oncontextmenu')
+  })
+}

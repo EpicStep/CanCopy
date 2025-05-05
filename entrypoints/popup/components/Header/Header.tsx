@@ -6,6 +6,7 @@ import {
 } from '@adara-cs/ui-kit-web';
 import styles from './style.module.css'
 import { useTheme } from '@/entrypoints/popup/hooks';
+import {MoonIcon, SunIcon} from '@adara-cs/icons';
 
 export const Header = () => {
     const { theme, toggle: toggleTheme } = useTheme()
@@ -20,10 +21,10 @@ export const Header = () => {
                 size='small'
             >
                 <SegmentedControlItem value='light'>
-                    <Icon name='sun'/>
+                  <Icon><SunIcon /></Icon>
                 </SegmentedControlItem>
                 <SegmentedControlItem value='dark'>
-                    <Icon name='moon'/>
+                  <Icon><MoonIcon /></Icon>
                 </SegmentedControlItem>
             </SegmentedControl>
         </header>

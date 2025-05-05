@@ -1,15 +1,13 @@
-import { storage } from "#imports";
 import { useLayoutEffect, useEffect } from "react";
 import { isValidURL } from '@/entrypoints/popup/utils';
+import { URLStorage } from "@/storage";
 
 export const useURLStore = () => {
     const [urls, setURLs] = useState<string[]>([])
     const initialized = useRef(false)
 
-    const storageKey = 'local:processing-urls'
-
     useLayoutEffect(() => {
-        storage.getItem<string[]>(storageKey).then((value) => {
+        URLStorage.getValue().then((value) => {
             initialized.current = true;
             if (!value) return
             setURLs(value)
@@ -18,9 +16,10 @@ export const useURLStore = () => {
 
     const add = (url: string) => {
         if (!isValidURL(url)) throw new Error('Invalid URL')
-        if (urls.includes(url)) return
+        const parsedURL = URL.parse(url)
+        if (!parsedURL || urls.includes(parsedURL.origin)) return
 
-        setURLs((state) => [...state, url])
+        setURLs((state) => [...state, parsedURL.origin])
     }
 
     const remove = (url: string) => {
@@ -28,7 +27,7 @@ export const useURLStore = () => {
     }
 
     useEffect(() => {
-        if (urls && initialized.current) storage.setItem(storageKey, urls)
+        if (urls && initialized.current) URLStorage.setValue(urls)
     }, [urls])
 
     return {
