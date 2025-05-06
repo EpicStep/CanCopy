@@ -1,4 +1,4 @@
-import {storage} from "#imports";
+import { storage } from '#imports';
 
 export type Theme = 'dark' | 'light';
 

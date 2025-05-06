@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import defineContentScript  from './index.ts'
-import { URLStorage } from "@/storage";
+import { URLStorage } from '@/storage';
 
 describe('content script', () => {
   beforeEach(async () => {

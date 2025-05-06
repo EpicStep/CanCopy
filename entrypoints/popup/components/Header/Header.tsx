@@ -3,10 +3,10 @@ import {
     SegmentedControl,
     SegmentedControlItem,
     Heading,
-} from '@adara-cs/ui-kit-web';
+} from '@vega-ui/react';
 import styles from './style.module.css'
 import { useTheme } from '@/entrypoints/popup/hooks';
-import {MoonIcon, SunIcon} from '@adara-cs/icons';
+import { MoonIcon, SunIcon } from '@vega-ui/icons';
 
 export const Header = () => {
     const { theme, toggle: toggleTheme } = useTheme()

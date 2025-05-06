@@ -1,6 +1,6 @@
-import { useLayoutEffect, useEffect } from "react";
+import { useLayoutEffect, useEffect } from 'react';
 import { isValidURL } from '@/entrypoints/popup/utils';
-import { URLStorage } from "@/storage";
+import { URLStorage } from '@/storage';
 
 export const useURLStore = () => {
     const [urls, setURLs] = useState<string[]>([])

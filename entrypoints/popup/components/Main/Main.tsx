@@ -1,13 +1,13 @@
 import { FC, useId } from 'react';
-import { csx } from '@adara-cs/utils';
+import { csx } from '@vega-ui/utils';
 import { Header } from '@/entrypoints/popup/components/Header/Header.tsx';
-import { Button, Heading, IconButton, Label, Separator, Text, TextField } from '@adara-cs/ui-kit-web';
+import { Button, Heading, IconButton, Label, Separator, Text, TextField } from '@vega-ui/react';
 import { i18n } from '#i18n';
 import { useTheme, useURLStore } from '@/entrypoints/popup/hooks';
 import { URLList } from '@/entrypoints/popup/components/URLList';
 import { URLListItem } from '@/entrypoints/popup/components/URLListItem';
 import style from './style.module.css'
-import {MinusIcon, PlusIcon} from "@adara-cs/icons";
+import { PlusIcon } from '@vega-ui/icons';
 
 export const Main: FC = () => {
   const { theme } = useTheme()
@@ -47,7 +47,7 @@ export const Main: FC = () => {
       <Button
         variant='secondary'
         onClick={() => {
-          browser.tabs.query({active: true}).then((tabs) => {
+          browser.tabs.query({ active: true }).then((tabs) => {
             if (tabs.length < 1) return
            addURLToStore(tabs[0].url)
           })

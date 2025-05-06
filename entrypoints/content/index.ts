@@ -1,4 +1,4 @@
-import { URLStorage } from "@/storage";
+import { URLStorage } from '@/storage';
 
 export default defineContentScript({
   matches: ['*://*/*'],

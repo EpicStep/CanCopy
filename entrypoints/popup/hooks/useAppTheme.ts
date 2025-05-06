@@ -1,5 +1,5 @@
-import { useLayoutEffect, useEffect, useState, useCallback } from "react";
-import { Theme, ThemeStorage } from "@/storage";
+import { useLayoutEffect, useEffect, useState, useCallback } from 'react';
+import { Theme, ThemeStorage } from '@/storage';
 
 export const useAppTheme = () => {
     const [theme, setTheme] = useState<Theme>(window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ? 'dark' : 'light')
