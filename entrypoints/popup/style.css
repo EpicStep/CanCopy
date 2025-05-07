@@ -1,5 +1,5 @@
 @import url("normalize.css") layer(reset);
 @import url('@vega-ui/react/style.css') layer(library);
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('./assets/fonts/montserrat.css');
 
 @layer reset, library, components, overrides;

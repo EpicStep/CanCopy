@@ -49,7 +49,7 @@ export const Main: FC = () => {
         onClick={() => {
           browser.tabs.query({ active: true }).then((tabs) => {
             if (tabs.length < 1) return
-           addURLToStore(tabs[0].url)
+            if (tabs[0].url) addURLToStore(tabs[0].url)
           })
         }}
       >
