@@ -85,7 +85,7 @@ jobs:
 
       - name: Upload ZIPs
         if: ${{ !inputs.dryRun }}
-        run: gh release upload v${{ steps.version.outputs.newVersion }} .output/*-chrome.zip .output/*-firefox.zip .output/*-sources.zip
+        run: gh release upload v${{ steps.version.outputs.newVersion }} .output/*.zip
         env:
           GH_TOKEN: ${{ github.token }}
 
