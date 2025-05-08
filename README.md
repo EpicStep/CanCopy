@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/icon.png" alt="CanCopy Logo" width="180" />
-</p>
-
 <h1 align="center">CanCopy</h1>
 
 <p align="center">
@@ -10,10 +6,10 @@
 
 <p align="center">
   <a href="https://chromewebstore.google.com/detail/cancopy/ggcfemmoabhhelfkhknhbnkmeahloiod">
-    <img alt="Get it on Chrome Web Store" height="60" src="https://img.shields.io/badge/Chrome%20Web%20Store-Get%20the%20extension-blue?logo=googlechrome&logoColor=white&style=for-the-badge" />
+    <img alt="Get it on Chrome Web Store" height="25" src="https://img.shields.io/badge/Chrome%20Web%20Store-Get%20the%20extension-blue?logo=googlechrome&logoColor=white&style=for-the-badge" />
   </a>
   <a href="https://addons.mozilla.org/ru/firefox/addon/cancopy/">
-    <img alt="Get it on Firefox Add-ons" height="60" src="https://img.shields.io/badge/Firefox%20Add--ons-Get%20the%20extension-orange?logo=firefox-browser&logoColor=white&style=for-the-badge" />
+    <img alt="Get it on Firefox Add-ons" height="25" src="https://img.shields.io/badge/Firefox%20Add--ons-Get%20the%20extension-orange?logo=firefox-browser&logoColor=white&style=for-the-badge" />
   </a>
 </p>
 
