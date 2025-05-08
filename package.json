@@ -3,7 +3,7 @@
   "description": "A web extension that allow you to copy any content from website",
   "license": "MIT",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
