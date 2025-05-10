@@ -13,12 +13,18 @@ export default defineContentScript({
 });
 
 const removeCopyLocks = (document: Document) => {
-  document.querySelectorAll('*').forEach(el => {
-    if (el.style.userSelect != '') el.style.userSelect = 'text';
-    if (el.style.webkitUserSelect != '') el.style.webkitUserSelect = 'text';
-    if (el.style.MozUserSelect != '') el.style.MozUserSelect = 'text';
-    if (el.style.msUserSelect != '') el.style.msUserSelect = 'text';
+  const styleElement = document.createElement('style');
+  styleElement.textContent = `
+    html body * {
+      user-select: text !important;
+      -webkit-user-select: text !important;
+      -moz-user-select: text !important;
+      -ms-user-select: text !important;
+    }
+  `;
+  document.head.appendChild(styleElement);
 
+  document.querySelectorAll('*').forEach(el => {
     el.removeAttribute('oncopy')
     el.removeAttribute('oncut')
     el.removeAttribute('oncontextmenu')
