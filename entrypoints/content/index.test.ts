@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import defineContentScript  from './index.ts'
 import { URLStorage } from '@/storage';
+import { ContentScriptContext } from '#imports';
 
 describe('content script', () => {
   beforeEach(async () => {
@@ -16,7 +17,7 @@ describe('content script', () => {
     const testContent = '<head></head><body><p oncopy="return false;">test-text</p></body>'
     setDocument(testContent)
 
-    await defineContentScript.main({} as any)
+    await defineContentScript.main({} as ContentScriptContext)
 
     expect(document.documentElement.innerHTML).toBe(testContent)
   })
@@ -29,7 +30,7 @@ describe('content script', () => {
 
     setDocument('<head></head><body><p oncopy="return false;">test-text</p></body>')
 
-    await defineContentScript.main({} as any)
+    await defineContentScript.main({} as ContentScriptContext)
 
     expect(document.querySelector('p')?.hasAttribute('oncopy')).toBe(false)
 
@@ -50,7 +51,7 @@ describe('content script', () => {
 
     setDocument('<head></head><body><p style="user-select: none;">test-text</p></body>')
 
-    await defineContentScript.main({} as any)
+    await defineContentScript.main({} as ContentScriptContext)
 
     // Check that our style element was added
     const styleElement = document.querySelector('style');
